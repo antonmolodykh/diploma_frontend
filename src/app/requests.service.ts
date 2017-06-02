@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Output, EventEmitter } from '@angular/core';
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
 
 // Statics
@@ -15,7 +15,9 @@ import 'rxjs/add/operator/toPromise';
 @Injectable()
 export class RequestsService {
 
-	private serverUrl = "http://192.168.0.103:8000/api/";
+  @Output() profileChange: EventEmitter<any> = new EventEmitter()
+
+  private serverUrl = "http://127.0.0.1:8000/api/";
 
   constructor(private http: Http) { }
 
@@ -56,7 +58,7 @@ export class RequestsService {
         }
     }
     // Отправляем запрос на сервер
-    return this.http.get(request)
+    return this.http.get(request, { withCredentials: true })
     .map((response: Response) => response.json())
     .toPromise()
     .then(response => {
@@ -75,5 +77,37 @@ export class RequestsService {
   		"access_token": access_token
   	});
 
+  }
+
+  public accountLogin(email: string, password: string) {
+    return this.sendPostRequest("account/login", {
+  		"email": email,
+  		"password": password
+  	}).then(response => {
+        this.profileChange.emit(response)
+        return 'sucess';
+      });
+  }
+
+  public accountLogout() {
+    return this.sendPostRequest("account/logout");
+  }
+
+  public accountMy() {
+  	return this.sendGetRequest("account/my")
+    .then(response => {
+      this.profileChange.emit(response)
+      return response;
+    });
+  }
+
+  public statisticsSummary() {
+  	return this.sendGetRequest("statistics/report");
+  }
+
+  public statistics(count: number = undefined) {
+  	return this.sendPostRequest("statistics/statistics", {
+            "count": count
+      });
   }
 }

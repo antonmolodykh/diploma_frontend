@@ -1,0 +1,7 @@
+<div *ngIf=media>  
+  <img [src]="media.image" alt="">
+  <div class="counters">
+    <span><i class="ion-android-favorite"></i>{{media.like_count}}</span>
+    <span><i class="ion-android-chat"></i>{{media.comment_count}}</span>
+  </div>
+</div>

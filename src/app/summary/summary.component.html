@@ -1,0 +1,80 @@
+<md-card>
+  <md-card-header>
+    <md-card-title>Текущие показатели</md-card-title>
+    <md-card-subtitle></md-card-subtitle>
+  </md-card-header>
+  <md-card-content *ngIf="summary">
+    <div class="data-row" id="counters">
+      <div class="data-row-header"></div>
+      <div class="data-row-content">
+        <div>
+          <span class="counter">
+            <i class="ion-android-people"></i>
+            {{summary.follows}}</span>
+          <p>подписчиков</p>
+        </div>
+        <div>
+          <span class="counter">
+            <i class="ion-eye"></i>
+            {{summary.followed_by}}</span>
+          <p>подписок</p>
+        </div>
+        <div>
+          <span class="counter">
+            <i class="ion-android-image"></i>
+            {{summary.count_media}}</span>
+          <p>публикаций</p>
+        </div>
+        <div>
+          <span class="counter">
+            <i class="ion-android-favorite"></i>
+            {{summary.likes}}</span>
+          <p>лайков</p>
+        </div>
+        <div>
+          <span class="counter">
+            <i class="ion-android-chat"></i>
+            {{summary.comments}}</span>
+          <p>комментариев</p>
+        </div>
+        <div>
+          <app-involvement-indicator [involvement]="summary.involvement"></app-involvement-indicator>
+        </div>
+      </div>
+    </div>
+    <div class="data-row" id="latest">
+      <div class="data-row-header">Последние публикации</div>
+      <div class="data-row-content">
+        <app-media-thumbnail *ngFor="let media of summary.last_media" [media]="media"></app-media-thumbnail>
+      </div>
+    </div>
+    <div class="data-row" id="popular">
+      <div class="data-row-header">Самые популярные</div>
+      <div class="data-row-content">
+        <app-media-thumbnail *ngFor="let media of summary.max_like" [media]="media"></app-media-thumbnail>
+      </div>
+    </div>
+    <div class="data-row" id="discussed">
+      <div class="data-row-header">Самые обсуждаемые</div>
+      <div class="data-row-content">
+        <app-media-thumbnail *ngFor="let media of summary.max_comments" [media]="media"></app-media-thumbnail>
+      </div>
+    </div>
+    <div class="data-row" id="tags">
+      <div class="data-row-header">Популярные хэштеги</div>
+      <div class="data-row-content">
+        <p>
+          <span *ngFor="let tag of summary.tags">{{tag}}</span>
+        </p>
+      </div>
+    </div>
+    <div class="data-row" id="filters">
+      <div class="data-row-header">Популярные фильтры</div>
+      <div class="data-row-content">
+        <p>
+          <span *ngFor="let filter of summary.filters">{{filter}}</span>
+        </p>
+      </div>
+    </div>
+  </md-card-content>
+</md-card>

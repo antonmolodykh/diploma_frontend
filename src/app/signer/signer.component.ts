@@ -8,9 +8,14 @@ import { RequestsService } from '../requests.service';
 })
 export class SignerComponent implements OnInit {
 
+  profile = undefined;
+
   constructor(private requests:RequestsService) { }
 
   ngOnInit() {
+    this.requests.profileChange.subscribe(profile => {
+      this.profile = profile
+    });
   }
 
   register() {

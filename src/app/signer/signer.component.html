@@ -1,1 +1,7 @@
-<button md-button (click)="register()">Войти!</button>
+
+<div *ngIf="profile; else loginButton">
+    <p>{{profile.username}}</p>
+</div>
+<ng-template>
+    <button md-button (click)="register()">Войти!</button>
+</ng-template>

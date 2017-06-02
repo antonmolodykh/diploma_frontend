@@ -1,0 +1,24 @@
+#counters {
+    text-align: center;
+}
+
+#counters .data-row-content {
+    justify-content: space-around;
+}
+
+span.counter {
+    font-size: 48px;
+}
+
+#tags span {
+    padding: 6px 10px;
+    background: #E3F2FD;
+    color: #2196F3;
+    margin-right: 8px;
+}
+
+#tags span:before {
+    content: '\f219';
+    font-family: 'IonIcons';
+    margin-right: 6px;
+}
