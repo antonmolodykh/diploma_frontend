@@ -1,0 +1,16 @@
+:host {
+    margin-right: 10px;
+    position: relative;
+}
+
+img {
+    border-radius: 5px;
+}
+
+.counters {
+    position: absolute;
+    bottom: 5px;
+    width: 100%;
+    color: rgba(255, 255, 255, .7);
+    text-align: center;
+}

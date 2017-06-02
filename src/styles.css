@@ -14,6 +14,10 @@ p {
     color: black;
 }
 
+.data-row {
+    padding: 10px 0;
+}
+
 .data-row-content {
     display: flex;
     flex-direction: row;
