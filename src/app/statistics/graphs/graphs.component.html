@@ -1,0 +1,18 @@
+<md-card>
+    <md-card-title>Текущие показатели</md-card-title>
+    <md-select [(ngModel)]='period' (change)='getStatistics()'>
+      <md-option *ngFor='let option of periodOptions' [value]='option.value'>{{option.viewValue}}</md-option>
+    </md-select>
+  <md-card-content *ngIf="statistics">
+    <app-graph [data]='statistics.likes' [header]='"Отметки Нравится"'></app-graph>
+    <app-graph [data]='statistics.likes_average' [header]='"Среднее количество отметок Нравится"'></app-graph>
+    <app-graph [data]='statistics.involvement' [header]='"Показатель вовлеченности"'></app-graph>
+    <app-graph [data]='statistics.comments' [header]='"Количество комментариев"'></app-graph>
+    <app-graph [data]='statistics.follows' [header]='"Количество подписок"'></app-graph>
+    <app-graph [data]='statistics.followed_by' [header]='"Мои подписки"'></app-graph>
+    <app-graph [data]='statistics.count_media' [header]='"Количество публикаций"'></app-graph>
+    <app-graph [data]='statistics.count_images' [header]='"Количество фото"'></app-graph>
+    <app-graph [data]='statistics.count_videos' [header]='"Количество видео"'></app-graph>
+  </md-card-content>
+</md-card>
+  

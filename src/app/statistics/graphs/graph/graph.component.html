@@ -1,0 +1,8 @@
+<span></span>
+<div class="graph-header">{{header}}</div>
+<div class="graph-content" *ngIf='data'>
+  <div *ngFor='let point of data' [ngStyle]="{'height': point.height+'%'}">
+    <span class="value">{{point.value}}</span>
+    <span class="date">{{point.date}}</span>
+  </div>
+</div>

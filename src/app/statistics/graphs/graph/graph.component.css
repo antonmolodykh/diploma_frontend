@@ -1,0 +1,47 @@
+.graph-content {
+    display: flex;
+    flex-direction: row;
+    align-content: stretch;
+    align-items: flex-end;
+    height: 200px;
+    background: #fafafa;
+}
+
+.graph-content>div {
+    position: relative;
+    border-top: 4px solid #2196F3;
+    background: #E3F2FD;
+    margin-bottom: 15px;
+    flex: auto;
+    text-align: center;
+    transition: .2s;
+}
+
+.graph-content>div:hover {
+    background: #bbdefb;
+}
+
+.graph-content .value {
+    margin-top: 5px;
+    color: #2196F3;
+    transition: .3s;
+}
+
+.graph-content>div:hover .value {
+    font-size: 24px;
+}
+
+.graph-content .date {
+    position: absolute;
+    bottom: -17px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    opacity: 0;
+    transition: .3s;
+}
+
+.graph-content>div:hover .date {
+    opacity: 1;
+}

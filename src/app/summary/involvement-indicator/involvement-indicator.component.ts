@@ -15,13 +15,19 @@ export class InvolvementIndicatorComponent implements OnInit {
     '#cddc39',
     '#4caf50'
   ];
-  colorIndex = 0;
+  index = 0;
+  tips = [
+    'это очень низкий показатель',
+    'это низкий показатель',
+    'это хороший показатель',
+    'это отличный показатель'
+  ]
 
   constructor() { }
 
   ngOnInit() {
-    this.colorIndex = Math.floor(this.involvement/10);
-    if (this.colorIndex > this.indicatorColors.length-1) this.colorIndex = this.indicatorColors.length-1;
+    this.index = Math.floor(this.involvement/10);
+    if (this.index > this.indicatorColors.length-1) this.index = this.indicatorColors.length-1;
   }
 
 }

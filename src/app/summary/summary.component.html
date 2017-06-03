@@ -24,12 +24,19 @@
             <i class="ion-android-image"></i>
             {{summary.count_media}}</span>
           <p>публикаций</p>
+          <p>
+            <i class="ion-android-camera"></i>{{summary.count_photo}}
+            <i class="ion-android-film"></i>{{summary.count_video}}
+          </p>
         </div>
         <div>
           <span class="counter">
             <i class="ion-android-favorite"></i>
             {{summary.likes}}</span>
           <p>лайков</p>
+          <p>
+            (в среднем: {{summary.likes_average}})  
+          </p>
         </div>
         <div>
           <span class="counter">
