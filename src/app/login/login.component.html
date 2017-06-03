@@ -1,5 +1,14 @@
-<div>
-  <input type="text" [(ngModel)]="emailValue" name="email" placeholder="email">
-  <input type="password" [(ngModel)]="passwordValue" name="password" placeholder="password">
-  <button md-button (click)="login()">Войти</button>
+<div class="wrapper">
+  <md-card>
+    <md-card-title>Авторизация</md-card-title>
+    <md-card-content>
+      <md-input-container>
+        <input mdInput placeholder="Email" [(ngModel)]="emailValue">
+      </md-input-container>
+      <md-input-container>
+        <input mdInput placeholder="Password" type="password" [(ngModel)]="passwordValue">
+      </md-input-container>
+      <button color='accent' md-raised-button (click)="login()">Войти</button>
+    </md-card-content>
+  </md-card>
 </div>

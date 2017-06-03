@@ -5,10 +5,11 @@ import { HttpModule } from '@angular/http';
 import { RequestsService } from './requests.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { MdToolbarModule } from '@angular/material';
 import { MdButtonModule } from '@angular/material';
 import { MdCardModule } from '@angular/material';
 import { MdProgressSpinnerModule } from '@angular/material';
-import { MdSelectModule } from '@angular/material';
+import { MdSelectModule, MdInputModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { SignerComponent } from './signer/signer.component';
@@ -49,10 +50,12 @@ const appRoutes = [
     BrowserAnimationsModule,
     FormsModule,
     HttpModule,
+    MdToolbarModule,
     MdButtonModule,
     MdCardModule,
     MdProgressSpinnerModule,
     MdSelectModule,
+    MdInputModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [

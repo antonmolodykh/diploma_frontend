@@ -1,7 +1,10 @@
 
 <div *ngIf="profile; else loginButton">
-    <p>{{profile.username}}</p>
+    <p>
+        <img [src]="profile.profile_picture" alt="">
+        {{profile.username}}
+    </p>
 </div>
-<ng-template>
-    <button md-button (click)="register()">Войти!</button>
+<ng-template #loginButton>
+    <a routerLink='login' md-button >Войти!</a>
 </ng-template>

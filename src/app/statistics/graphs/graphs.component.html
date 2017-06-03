@@ -1,5 +1,6 @@
 <md-card>
     <md-card-title>Текущие показатели</md-card-title>
+    <span>Отображать данные за </span>
     <md-select [(ngModel)]='period' (change)='getStatistics()'>
       <md-option *ngFor='let option of periodOptions' [value]='option.value'>{{option.viewValue}}</md-option>
     </md-select>

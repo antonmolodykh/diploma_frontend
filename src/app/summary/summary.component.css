@@ -26,11 +26,17 @@ span.counter {
     font-size: 48px;
 }
 
+span.counter>i {
+    color: #ccc;
+    font-size: 42px;
+}
+
 #tags span {
     padding: 6px 10px;
     background: #E3F2FD;
     color: #2196F3;
     margin-right: 8px;
+    border-radius: 5px;
 }
 
 #tags span:before {

@@ -11,6 +11,8 @@ export class GraphComponent implements OnInit {
   @Input() header: string;
   @Input() data: any[];
 
+  isExpanded = true;
+
   constructor() { }
 
   ngOnInit() {
@@ -27,6 +29,11 @@ export class GraphComponent implements OnInit {
       }
     }
     console.log(this.data);
+  }
+
+  toggle() {
+    this.isExpanded = !this.isExpanded;
+    console.log(this.isExpanded)  
   }
 
 }
