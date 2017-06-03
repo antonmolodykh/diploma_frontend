@@ -19,7 +19,7 @@
 }
 
 #recommendation p {
-    font-size: 16px;
+    /*font-size: 16px;*/
 }
 
 #counters {
@@ -55,6 +55,21 @@ span.tag {
 
 span.tag:before {
     content: '\f219';
+    font-family: 'IonIcons';
+    margin-right: 6px;
+}
+
+span.filter {
+    color: #9C27B0;
+    background: #F3E5F5;
+    padding: 6px 10px;
+    margin-right: 8px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+span.filter:before {
+    content: '\f358';
     font-family: 'IonIcons';
     margin-right: 6px;
 }

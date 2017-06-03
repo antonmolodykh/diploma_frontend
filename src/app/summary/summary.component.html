@@ -10,7 +10,7 @@
       <p>
         Рекомендуем опубликовать фото с хэштегами
         <span class='tag' *ngFor='let tag of summary.tags'>{{tag}}</span>
-         и фильтром {{summary.filters[0]}} в районе {{summary.best_hour}} часов.
+         и фильтром <span class="filter">{{summary.filters[0]}}</span> в районе {{summary.best_hour}} часов.
       </p>
     </div>
     <div class="data-row" id="counters">
@@ -88,7 +88,7 @@
       <div class="data-row-header">Популярные фильтры</div>
       <div class="data-row-content">
         <p>
-          <span *ngFor="let filter of summary.filters">{{filter}}</span>
+          <span class="filter" *ngFor="let filter of summary.filters">{{filter}}</span>
         </p>
       </div>
     </div>
