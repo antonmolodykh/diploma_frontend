@@ -9,6 +9,7 @@ import { RequestsService } from '../requests.service';
 export class StatisticsComponent implements OnInit {
 
   authenticated = false;
+  profile = undefined;
 
   constructor(private requests: RequestsService) { }
 
@@ -16,6 +17,7 @@ export class StatisticsComponent implements OnInit {
     this.requests.accountMy()
     .then(response => {
       this.authenticated = true;
+      this.profile = response;
     })
     .catch(error => {
       console.log(error)

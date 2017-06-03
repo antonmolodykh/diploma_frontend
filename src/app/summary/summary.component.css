@@ -3,6 +3,17 @@
     margin-bottom: 15px;
 }
 
+#recommendation {
+    background: #F1F8E9;
+    margin: 0 -24px;
+    padding: 24px;
+}
+
+#recommendation i {
+    font-size: 48px;
+    color: yellow;
+}
+
 #counters {
     text-align: center;
 }

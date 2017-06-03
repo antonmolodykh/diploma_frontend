@@ -1,9 +1,16 @@
 <md-card>
-  <md-card-header>
-    <md-card-title>Текущие показатели</md-card-title>
-    <md-card-subtitle></md-card-subtitle>
+  <md-card-header *ngIf='profile'>
+    <img [src]="profile.profile_picture" alt="" md-card-avatar>
+    <md-card-title>{{profile.username}}</md-card-title>
+    <md-card-subtitle>{{profile.full_name}}</md-card-subtitle>
   </md-card-header>
   <md-card-content *ngIf="summary">
+    <div id="recommendation">
+      <p>
+        <i class="ion-star"></i>
+        Рекомендуем опубликовать фото с хэштегами {{summary.tags}} и фильтром {{summary.filters[0]}} в районе {{summary.best_hour}} часов.
+      </p>
+    </div>
     <div class="data-row" id="counters">
       <div class="data-row-header"></div>
       <div class="data-row-content">
