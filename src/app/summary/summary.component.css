@@ -44,6 +44,14 @@ span.counter>i.red {
     color: red;
 }
 
+span.mini-counter {
+    margin-right: 5px;
+}
+
+.mini-counter i {
+    margin-right: 2px;
+}
+
 span.tag {
     padding: 6px 10px;
     background: #E3F2FD;
@@ -72,4 +80,19 @@ span.filter:before {
     content: '\f358';
     font-family: 'IonIcons';
     margin-right: 6px;
+}
+
+#hours .data-row-content {
+    display: flex;
+    flex-direction: row;
+}
+
+.hour {
+    flex: auto;
+    text-align: center;
+}
+
+.hour .square {
+    background: #4596f3;
+    height: 42px;
 }

@@ -9,6 +9,7 @@ import { RequestsService } from '../requests.service';
 export class SummaryComponent implements OnInit {
 
   summary = undefined;
+  maxLikeOfHour = 0;
   @Input() profile = undefined;
 
   constructor(private requests: RequestsService) { }
@@ -21,7 +22,8 @@ export class SummaryComponent implements OnInit {
     this.requests.statisticsSummary()
     .then(response => {
       this.summary = response;
-      this.summary.best_hour = this.summary.hours.indexOf(Math.max(... this.summary.hours))+1
+      this.summary.best_hour = this.summary.hours.indexOf(Math.max(... this.summary.hours));
+      this.maxLikeOfHour = Math.max(... this.summary.hours);
       console.log(response);
     })
     .catch(error => {
