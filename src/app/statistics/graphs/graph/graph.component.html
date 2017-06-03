@@ -1,6 +1,7 @@
 <span></span>
-<div class="graph-header">
+<div md-ripple class="graph-header">
   {{header}}
+  <span class="flex-spacer"></span>
   <button md-icon-button (click)='toggle()'><i [ngClass]='{"ion-android-arrow-dropup": isExpanded, "ion-android-arrow-dropdown": !isExpanded}'></i></button>
 </div>
 <div class="graph-content" *ngIf='data' [ngClass]='{"collapsed": !isExpanded}'>

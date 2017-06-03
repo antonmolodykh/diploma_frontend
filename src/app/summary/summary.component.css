@@ -4,14 +4,22 @@
 }
 
 #recommendation {
-    background: #F1F8E9;
+    background: #FFFDE7;
     margin: 0 -24px;
     padding: 24px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 #recommendation i {
     font-size: 48px;
-    color: yellow;
+    color: #ffeb3b;
+    margin-right: 24px;
+}
+
+#recommendation p {
+    font-size: 16px;
 }
 
 #counters {
@@ -23,23 +31,29 @@
 }
 
 span.counter {
-    font-size: 48px;
+    font-size: 32px;
 }
 
 span.counter>i {
     color: #ccc;
     font-size: 42px;
+    vertical-align: middle;
 }
 
-#tags span {
+span.counter>i.red {
+    color: red;
+}
+
+span.tag {
     padding: 6px 10px;
     background: #E3F2FD;
     color: #2196F3;
     margin-right: 8px;
     border-radius: 5px;
+    font-size: 14px;
 }
 
-#tags span:before {
+span.tag:before {
     content: '\f219';
     font-family: 'IonIcons';
     margin-right: 6px;

@@ -11,7 +11,8 @@ export class GraphComponent implements OnInit {
   @Input() header: string;
   @Input() data: any[];
 
-  isExpanded = true;
+  isExpanded = false;
+  months = ['янв', 'фев', 'мар', 'апр', 'мая', 'июн', 'июл' ,'авг' ,'сен' ,'окт' ,'ноя', 'дек']
 
   constructor() { }
 
@@ -23,7 +24,7 @@ export class GraphComponent implements OnInit {
       let date = new Date();
       date.setDate(date.getDate()-(this.data.length-i));
       this.data[i] = {
-        date: date.getDate() + '.' + date.getMonth(),
+        date: date.getDate() + ' ' + this.months[date.getMonth()],
         value: this.data[i],
         height: (this.data[i]-min)/(delta/100)*0.7+15
       }

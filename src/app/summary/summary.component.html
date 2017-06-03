@@ -6,9 +6,11 @@
   </md-card-header>
   <md-card-content *ngIf="summary">
     <div id="recommendation">
+      <i class="ion-star"></i>
       <p>
-        <i class="ion-star"></i>
-        Рекомендуем опубликовать фото с хэштегами {{summary.tags}} и фильтром {{summary.filters[0]}} в районе {{summary.best_hour}} часов.
+        Рекомендуем опубликовать фото с хэштегами
+        <span class='tag' *ngFor='let tag of summary.tags'>{{tag}}</span>
+         и фильтром {{summary.filters[0]}} в районе {{summary.best_hour}} часов.
       </p>
     </div>
     <div class="data-row" id="counters">
@@ -38,10 +40,10 @@
         </div>
         <div>
           <span class="counter">
-            <i class="ion-android-favorite"></i>
+            <i class="ion-android-favorite red"></i>
             {{summary.likes}}</span>
           <p>лайков</p>
-          <p>
+          <p class="light">
             (в среднем: {{summary.likes_average}})  
           </p>
         </div>
@@ -78,7 +80,7 @@
       <div class="data-row-header">Популярные хэштеги</div>
       <div class="data-row-content">
         <p>
-          <span *ngFor="let tag of summary.tags">{{tag}}</span>
+          <span class="tag" *ngFor="let tag of summary.tags">{{tag}}</span>
         </p>
       </div>
     </div>
