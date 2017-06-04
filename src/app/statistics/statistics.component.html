@@ -1,4 +1,6 @@
-<app-summary *ngIf="authenticated" [profile]='profile'></app-summary>
-    <!--<md-spinner></md-spinner>-->
-
+<app-summary *ngIf="authenticated; else preloader" [profile]='profile'></app-summary>
 <app-graphs *ngIf="authenticated"></app-graphs>
+
+<ng-template #preloader>
+    <md-spinner color='accent'></md-spinner>
+</ng-template>
