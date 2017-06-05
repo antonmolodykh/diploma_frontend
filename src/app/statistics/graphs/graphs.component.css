@@ -1,3 +1,7 @@
 md-card-title+span {
     vertical-align: sub;
 }
+
+md-card-subtitle+span {
+    vertical-align: -webkit-baseline-middle;
+}
